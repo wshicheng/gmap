@@ -32,12 +32,16 @@ export default {
     return {
       files: [
         {
-          title: '新建任务',
+          title: 'todoMVC',
           url: '/activePublic'
         },
         {
           title: '热力图',
           url: '/activeManage'
+        },
+        {
+          title: '属性与方法',
+          url: '/attribute'
         }
       ],
       beforeEditTitle: '',
