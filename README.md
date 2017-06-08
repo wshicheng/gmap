@@ -1,19 +1,21 @@
-热力图简单使用 项目源码地址 https://github.com/wshicheng/gmap
+# 项目由 vue-cli 脚手架搭建 （脚手架的使用 请自行度娘，在此就不赘述）
+## 项目运行  npm run dev
+# 热力图简单使用 
 
 下面我们分步介绍如何快速开始地图开发:
 
-申请JSAPI的开发者Key
+## 申请JSAPI的开发者Key
 
 [点我跳转申请地址](http://lbs.amap.com/dev/key)
 
-在页面中引入高德地图JavaScript API入口脚本
+## 在页面中引入高德地图JavaScript API入口脚本
 
 
 ```
 <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=您申请的key值"></script>
 ```
 
-创建地图容器
+## 创建地图容器
 
 在页面body里你想展示地图的地方创建一个div 容器，并指定id标识:
 
@@ -35,7 +37,7 @@ CSS
 #container {width:300px; height: 180px; }
 ```
 
-创建地图
+## 创建地图
 
 如上准备工作完成之后，就可以开始创建地图了。生成一副简单地图只需要一句代码，将我们刚刚创建的div的id传给Map的构造函数即可，这个时候API将根据用户所在的城市自动进行地图中心点和级别的设定：
 
@@ -46,7 +48,7 @@ JavaScript
 var map = new AMap.Map('container');
 ```
 
-设定地图的中心点和级别
+## 设定地图的中心点和级别
 
 我们一般需要给地图按需设定中心点和坐标等属性，这里可以通过两种方式，第一种，直接在地图初始化的时候传入相关属性，center属性的值可以是经纬度的二元数组，也可以是AMap.LngLat对象，要求经度值在前，纬度值在后：
 
@@ -61,7 +63,7 @@ var map = new AMap.Map('container',{
 });
 ```
 
-热力图配置
+## 热力图配置
 
 ```
 AMap.plugin(['AMap.ToolBar', 'AMap.Scale', 'AMap.Heatmap', 'AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Driving', 'AMap.Geolocation', 'AMap.CitySearch'], function () {
@@ -288,4 +290,10 @@ AMap.plugin(['AMap.ToolBar', 'AMap.Scale', 'AMap.Heatmap', 'AMap.Autocomplete', 
         })
       })
 ```
+# 效果预览 
+实现功能： 城市搜索，初始化定位，线路规划，热力图效果，其他功能完善中
+![image](http://note.youdao.com/yws/api/group/50339913/file/149135262?method=download&inline=true&version=1&shareToken=47E1075D7C2A495097B53E8902566E2B)
+![image](http://note.youdao.com/yws/api/personal/file/148CFC76FEA640A8879B23C034B4B2E7?method=download&shareKey=68cebda505ec85182c7695a12a31962f)
+![image](http://note.youdao.com/yws/api/group/50339913/file/149135805?method=download&inline=true&version=1&shareToken=95C44EA66831422D88CC2DFF42AEC596)
+
 
