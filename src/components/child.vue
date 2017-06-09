@@ -11,11 +11,20 @@
           只有在没有要分发的内容时才会显示
         </slot>
       </div>
+      <div>
+        <span>{{hello}}</span>
+        <el-button @click="updateHello">更新</el-button>
+      </div>
     </div>
 </template>
 <script>
   export default {
     props: ['num'],
+    data: function () {
+      return {
+        hello: 'helloworld'
+      }
+    },
     computed: {
       msg: function () {
         return this.num
@@ -27,6 +36,11 @@
       },
       decrement () {
         this.$emit('reduce')
+      },
+      updateHello () {
+        fetch('http://localhost:3000').then(response => response.json())
+        .then(data => console.log(data))
+        .catch(e => console.log('Oops, error', e))
       }
     }
   }
