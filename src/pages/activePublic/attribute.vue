@@ -17,12 +17,16 @@
     </section>
     <p>{{num}}</p>
     <div>
-      
+        <my-child v-on:add='addNum' v-on:reduce='reduceNum' v-bind:num="num">1111</my-child>
     </div>
   </div>
 </template>
 <script>
+  import myChild from '../.././components/child.vue'
   export default {
+    components: {
+      myChild
+    },
     data: () => {
       return {
         articleTitle: '文章标题',
@@ -55,6 +59,12 @@
       reverseTitle () {
         var res = [].slice.call(this.articleTitle).reverse().join('')
         this.articleTitle = res
+      },
+      addNum () {
+        this.num++
+      },
+      reduceNum () {
+        this.num--
       }
     },
     computed: {
