@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import Element from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
+import './assets/font/iconfont.css'
 import router from './router/index.js'
 Vue.config.productionTip = false
 Vue.use(Element)

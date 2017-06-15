@@ -2,22 +2,13 @@
     <header>
         <el-row>
             <el-col :span="24">
-                <el-menu theme="dark" default-active="5" class="el-menu-demo" mode="horizontal" >
-            <el-menu-item index="1">高级插件</el-menu-item>
-            <el-submenu index="2">
-                <template slot="title">在线商城</template>
-                <el-menu-item index="2-1">选项1</el-menu-item>
-            </el-submenu>
-            <el-menu-item index="3">
-                客户管理
-            </el-menu-item>
-            <el-menu-item index="4">
-                系统设置
-            </el-menu-item>
-            <el-menu-item index="5">
-                活动发布
-            </el-menu-item>
-        </el-menu>
+                <h3>蜜蜂出行加盟商管理平台</h3>
+                <div class="admin">
+                     <i class="icon iconfont icon-touxiang"></i>
+                    <span class="username">管理员</span>
+                    <i class="icon iconfont icon-xinfeng"></i>
+                    <i class="icon iconfont icon-tuichu"></i>
+                </div>
             </el-col>
         </el-row>
     </header>
@@ -28,6 +19,12 @@ export default {
 }
 </script>
 <style scoped>
-    ul.el-menu{border-radius:0;}
+    header{height:60px;line-height:60px;background:#000;color:#fff;}
+    header h3{display: inline-block;padding-left:20px;}
+    div.admin{float:right;}
+    div.admin span.username{font-size:14px;margin-right:5px;}
+    div.admin i.iconfont{font-size:30px;vertical-align: middle;margin-right: 10px;cursor:pointer;}
+    div.admin i.iconfont.icon-xinfeng,div.admin i.iconfont.icon-tuichu{font-size:24px;}
+    div.admin i.iconfont.icon-tuichu:hover{color:yellow;}
 </style>
 

@@ -10,28 +10,6 @@
     <!-- built files will be auto injected -->
   </body>
   <script>
-    var o = {}
-    var value = 22
-    Object.defineProperty(o, 'a', {
-      configurable: true,
-      get: function () {
-        console.log('我的值是：' + value)
-        return value
-      },
-      set: function (newValue) {
-        console.log('我被设置城:' + newValue)
-        value = newValue
-      }
-    })
-    var data = {
-      a: 1,
-      someObject: {
-        x: 10
-      },
-      ajax: {}
-    }
-    var res = Object.assign({}, data.someObject, {x: 20, z: 30})
-    console.log(res)
 
   </script>
 </html>

@@ -3,10 +3,10 @@
         <el-row class="tac">
             <el-col :span="24">
                 <ul>
-                  <router-link key="file.titile" v-bind:to='file.url' tag="li" v-for="file of files">{{file.title}}
+                  <router-link key="file.titile" v-bind:to='file.path' tag="li" v-for="file of files">{{file.name}}
                     <i class="el-icon-edit" v-on:click="showEditHandle(file)"></i>
                     <div class="editTitle" v-show="file === editTitle">
-                      <input type="text" v-model="file.title" v-on:blur="editEndFile" v-on:keyup.enter="editEndFile" v-on:keyup.esc="cancleEditFile(file)">
+                      <input type="text" v-model="file.name" v-on:blur="editEndFile" v-on:keyup.enter="editEndFile" v-on:keyup.esc="cancleEditFile(file)">
                     </div>
                   </router-link>
                 </ul>
@@ -30,20 +30,7 @@ export default {
   name: 'leftSider',
   data: function () {
     return {
-      files: [
-        {
-          title: 'todoMVC',
-          url: '/activePublic'
-        },
-        {
-          title: '热力图',
-          url: '/activeManage'
-        },
-        {
-          title: '属性与方法',
-          url: '/attribute'
-        }
-      ],
+      files: this.$router.options.routes.filter((route) => { return (route.path !== '/') && (route.path !== '/index') }),
       beforeEditTitle: '',
       editTitle: '',
       showEditArea: false,
