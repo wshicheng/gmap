@@ -60,9 +60,43 @@
          </el-col>
       </el-row>
     </div>
+    <div class="settlementInfo module">
+      <el-row>
+        <el-col :span="8">
+          <span>当前已为您赚到￥18800000.00</span>
+        </el-col>
+        <el-col :span="8">
+          <span>已结算￥60000.00</span>
+        </el-col>
+        <el-col :span="8">
+          <span>带结算￥300000.00</span>
+          <el-button class="withdrawal">提现</el-button>
+        </el-col>
+      </el-row>
+    </div>
+    <div class="hotmap module">
+      <div class="mapHeader">
+        <div class="mapTitle">
+          <el-row>
+            <el-col :span="10">
+              <span>运营热力图<small>每十分钟自动刷新</small></span>
+            </el-col>
+            <el-col :span="14">
+              <el-col :span="6">车辆总数2000辆</el-col>
+              <el-col :span="6">使用中1900辆</el-col>
+              <el-col :span="6">维修中99辆</el-col>
+              <el-col :span="6">已报废1辆</el-col>
+            </el-col>
+          </el-row>
+        </div>
+        <div class="mapWrap">
+          <Gamp></Gamp>
+        </div>
+      </div>
+    </div>
   </div>  
 </template>
-<style>
+<style scope>
   div.module{margin-bottom:20px;}
   div.el-col-12{padding:10px;width:49%}
   div.el-col-12:nth-child(1){float:right;}
@@ -86,11 +120,15 @@
   div.status div.list ul li div.el-col-12{padding:0 10px 0 0;text-align:right;}
   div.status div.list ul li div.el-col-6:nth-child(1){padding-left:10px;}
   div.datas{padding:0}
-  div.Histogram{height:300px;width:100%;background:#ff4949;}
- 
+  div.Histogram{height:244px;width:100%;background:#ff4949;}
+  div.settlementInfo{background:#ff4949;line-height: 40px;height:40px;padding:5px 10px;color:#fff;}
+  div.settlementInfo button.withdrawal{float:right;margin-right:20px;}
+  div.mapWrap{width:100%;height:500px;}
+  div.mapTitle{line-height: 40px;height: 40px;background: #1d90e6;padding: 5px 10px;margin-bottom: 5px;color: #fff;}
 </style>
 <script>
   import myCanvas from '../../../components/canvas.vue'
+  import Gamp from '../../../components/map.vue'
   export default {
     data: function () {
       return {
@@ -118,12 +156,25 @@
             countNum: 1311,
             time: '2017-04-04 10:01:01'
 
+          },
+          {
+            money: 399,
+            countNum: 1311,
+            time: '2017-04-04 10:01:01'
+
+          },
+          {
+            money: 399,
+            countNum: 1311,
+            time: '2017-04-04 10:01:01'
+
           }
         ]
       }
     },
     components: {
-      myCanvas
+      myCanvas,
+      Gamp
     }
   }
 </script>

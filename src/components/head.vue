@@ -7,7 +7,7 @@
                      <i class="icon iconfont icon-touxiang"></i>
                     <span class="username">管理员</span>
                     <i class="icon iconfont icon-xinfeng"></i>
-                    <i class="icon iconfont icon-tuichu"></i>
+                    <i class="icon iconfont icon-tuichu" @click="handleLoginOut"></i>
                 </div>
             </el-col>
         </el-row>
@@ -15,7 +15,11 @@
 </template>
 <script>
 export default {
-  name: 'head'
+  methods: {
+    handleLoginOut () {
+      this.$router.push({path: '/'})
+    }
+  }
 }
 </script>
 <style scoped>

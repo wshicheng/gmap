@@ -1,7 +1,7 @@
 <template>
- <div>
+ <div class="gmap">
     <div id="map-container"></div>
-    <div class="menu">
+    <div class="menu" v-show="false">
       <div id="myPageTop">
         <div><i class="el-icon-search"></i><input id="tipinput" type="text" placeholder="请输入您想去的地方  "></div>
       </div>
@@ -38,13 +38,9 @@
  </div>
 </template>
 <style>
+div.gmap{width:100%;height:100%;position: relative;}
   #map-container {
-      position:absolute;
-      left:0;
-      top:0;
-      right:0;
-      bottom:0;
-      width:70%;
+      width:100%;
       height:100%;
   }
   div.menu{position:absolute;width:30%;left:70%;top:0;bottom:0;right:0;z-index:3000;}
@@ -93,6 +89,8 @@
     div#editPath{margin-top: 10px;}
     div#editPath div.el-col-2 span{line-height: 32px}
     div.showCurrentCity{margin-top:10px;}
+    div.amap-copyright{display: none!important;}
+    .amap-logo img{display:none;}
 </style>
 <script>
 import AMap from 'AMap'
@@ -113,7 +111,7 @@ export default {
   },
   mounted: function () {
     this.init()
-    this.showCurrentCity()
+    /** this.showCurrentCity() **/
   },
   methods: {
     init () {

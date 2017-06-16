@@ -1,6 +1,6 @@
 <template>
   <div>
-    <canvas width="441" height="300" id="chart"></canvas>
+    <canvas id="chart"></canvas>
   </div>
 </template scoped>
 <style>
@@ -11,6 +11,10 @@
     methods: {
       paintCanvas () {
         var canvas = document.getElementById('chart')
+        var canvasWrapWidth = canvas.parentElement.parentElement.offsetWidth
+        var canvasWrapHeight = canvas.parentElement.parentElement.offsetHeight
+        canvas.setAttribute('width', canvasWrapWidth)
+        canvas.setAttribute('height', canvasWrapHeight)
         var width = canvas.width
         var height = canvas.height
         var cxt = canvas.getContext('2d')
@@ -23,31 +27,32 @@
           },
           {
             time: '8',
-            num: 8000
+            num: 4674
           },
           {
             time: '9',
-            num: 7000
+            num: 2341
           },
           {
             time: '10',
-            num: 6000
+            num: 2334
           },
           {
             time: '11',
-            num: 5500
+            num: 567
           },
           {
             time: '12',
-            num: 4300
+            num: 4332
           },
           {
             time: '13',
-            num: 3800
+            num: 1222
           }
         ]
         var arcWidth = (width - padding * 2 - space * (orderNum.length - 1)) / orderNum.length
         var radix = Math.max.apply(null, orderNum.map((item) => item.num))
+        var yAxis = orderNum.map((item) => item.num).sort((a, b) => { return a - b })
         cxt.beginPath()
         cxt.lineWidth = 1
         cxt.fillStyle = '#fff'
@@ -75,7 +80,7 @@
         cxt.stroke()
         cxt.closePath()
         // 画 y 轴刻度与值
-        var yNumber = 7
+        var yNumber = yAxis.length
         var yLength = Math.floor((height - padding * 2) / yNumber)
         for (var k = 0; k < yNumber; k++) {
           var ylen = yLength * (k + 1)
@@ -85,7 +90,7 @@
           cxt.font = '12px microsoft yahei'
           cxt.moveTo(padding - 10, height - padding - ylen)
           cxt.lineTo(padding - 15, height - padding - ylen)
-          cxt.fillText(orderNum[orderNum.length - 1 - k].num, padding - 30, height - padding - ylen + 5)
+          cxt.fillText(yAxis[k], padding - 30, height - padding - ylen + 5)
           cxt.stroke()
           cxt.closePath()
           // 画 等高线
