@@ -19,6 +19,9 @@
           downloadPNG: '下载PNG文件',
           downloadSVG: '下载SVG文件'
         },
+        credits: {
+          enabled: false // 禁用版权信息
+        },
         chart: {
           type: 'column'                           // 指定图表的类型，默认是折线图（line）
         },
@@ -26,12 +29,15 @@
           text: ' '                 // 指定图表标题
         },
         xAxis: {
-          categories: ['6-1', '6-2', '6-3', '6-4', '6-5', '6-6'],
+          categories: ['7:00', '8:00', '9:00', '10:00', '11:00', '12:00', '13:00'],
           crosshair: true
         },
         yAxis: {
           title: {
             text: ''
+          },
+          labels: {
+            step: 1
           },
           plotLines: [{
             value: 0,
@@ -49,26 +55,42 @@
           {
             name: ' ',
             color: '#74f7af',
-            data: [122, 122, 922, 1422, 1822, 2200],
+            data: [
+              {
+                color: 'red',
+                y: 200
+              },
+              {
+                color: 'green',
+                y: 300
+              },
+              {
+                color: 'blue',
+                y: 1300
+              },
+              {
+                color: 'orange',
+                y: 3200
+              },
+              {
+                color: 'brown',
+                y: 2300
+              },
+              {
+                color: 'gray',
+                y: 300
+              },
+              {
+                color: 'pink',
+                y: 600
+              }
+            ],
             tooltip: {
               valueSuffix: '单',
               useHTML: true,
-              headerFormat: '<span style="font-size: 12px">日期: {point.key}</span><br/>',
+              headerFormat: '<span style="font-size: 12px">时间 {point.key}</span><br/>',
               pointFormatter: function () {
                 return '<span style="color:{' + this.series.color + '}"></span>单数: <b>' + this.y + '</b>'
-              }
-            }
-          },
-          {
-            name: ' ',
-            color: '#ff4949',
-            data: [100, 28, 517, 1103, 172, 221],
-            tooltip: {
-              valuePrefix: '￥',
-              useHTML: true,
-              headerFormat: '<span style="font-size: 12px">日期: {point.key}</span><br/>',
-              pointFormatter: function () {
-                return '<span style="color:{' + this.series.color + '}"></span>金额: <b>￥' + this.y + '</b>'
               }
             }
           }
@@ -79,5 +101,6 @@
   }
 </script>
 <style>
+  div#container{width:100%;height:265px;}
   div#container g.highcharts-legend-item{display:none;}
 </style>

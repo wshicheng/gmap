@@ -120,14 +120,14 @@
   div.status div.list ul li div.el-col-12{padding:0 10px 0 0;text-align:right;}
   div.status div.list ul li div.el-col-6:nth-child(1){padding-left:10px;}
   div.datas{padding:0}
-  div.Histogram{height:244px;width:100%;background:#ff4949;}
+  div.Histogram{width:100%;background:#fff;}
   div.settlementInfo{background:#ff4949;line-height: 40px;height:40px;padding:5px 10px;color:#fff;}
   div.settlementInfo button.withdrawal{float:right;margin-right:20px;}
   div.mapWrap{width:100%;height:500px;}
   div.mapTitle{line-height: 40px;height: 40px;background: #1d90e6;padding: 5px 10px;margin-bottom: 5px;color: #fff;}
 </style>
 <script>
-  import myCanvas from '../../../components/canvas.vue'
+  import myCanvas from '../../../components/highChartRectIndex.vue'
   import Gamp from '../../../components/map.vue'
   export default {
     data: function () {
