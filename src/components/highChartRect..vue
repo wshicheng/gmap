@@ -23,7 +23,7 @@
           type: 'column'                           // 指定图表的类型，默认是折线图（line）
         },
         title: {
-          text: '24小时数据走势'                 // 指定图表标题
+          text: ' '                 // 指定图表标题
         },
         xAxis: {
           categories: ['6-1', '6-2', '6-3', '6-4', '6-5', '6-6'],
@@ -49,11 +49,11 @@
           {
             name: ' ',
             color: '#74f7af',
-            data: [122, 122, 922, 1422, 1822, 212, 252, 262, 232, 182, 132, 92, 72, 62, 92, 142, 182, 22, 222, 262, 233, 183, 139, 976],
+            data: [122, 122, 922, 1422, 1822, 2200],
             tooltip: {
               valueSuffix: '单',
               useHTML: true,
-              headerFormat: '<span style="font-size: 12px">时间： {point.key}</span><br/>',
+              headerFormat: '<span style="font-size: 12px">日期 {point.key}</span><br/>',
               pointFormatter: function () {
                 return '<span style="color:{' + this.series.color + '}"></span>金额: <b>' + this.y + '</b>'
               }
@@ -62,7 +62,7 @@
           {
             name: ' ',
             color: '#ff4949',
-            data: [100, 28, 517, 1103, 172, 221, 242, 243, 201, 142, 81, 22],
+            data: [100, 28, 517, 1103, 172, 221],
             tooltip: {
               valuePrefix: '￥',
               useHTML: true,
