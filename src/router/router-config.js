@@ -11,6 +11,8 @@ import earningsDetail from '../pages/inner/earningsDetail/index.vue'
 import settlementRecord from '../pages/inner/settlementRecord/index.vue'
 import accountManager from '../pages/inner/accountManager/index.vue'
 import memberCenter from '../pages/inner/memberCenter/index.vue'
+import queryCharts from '../pages/inner/queryCharts/index.vue'
+import queryLists from '../pages/inner/queryLists/index.vue'
 export default [
   {
     path: '/',
@@ -33,8 +35,19 @@ export default [
       },
       {
         path: '/index/consumeData',
-        name: '报表管理',
-        component: consumeData
+        component: consumeData,
+        children: [
+          {
+            path: '/',
+            name: '查看列表',
+            component: queryLists
+          },
+          {
+            path: '/index/consumeData/queryCharts',
+            name: '查看统计图',
+            component: queryCharts
+          }
+        ]
       },
       {
         path: '/index/allDaysData',

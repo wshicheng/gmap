@@ -96,7 +96,7 @@
     </div>
   </div>  
 </template>
-<style scope>
+<style>
   div.module{margin-bottom:20px;}
   div.el-col-12{padding:10px;width:49%}
   div.el-col-12:nth-child(1){float:right;}

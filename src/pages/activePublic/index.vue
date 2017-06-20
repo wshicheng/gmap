@@ -136,7 +136,7 @@
     }
   }
 </script>
-<style>
+<style scoped>
   ul li{list-style-type:none;}
   .activePublic{text-align: left;padding-left:10px;}
   .addTask{text-align: left;}
