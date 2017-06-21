@@ -114,4 +114,5 @@
   div.showCarInfo table{border-collapse:collapse;width:100%}
   div.showCarInfo table tr th{text-align:center;border:1px solid #1d90e6;padding: 5px 0;background:#1d90e6;color:#fff;}
   div.showCarInfo table tr td{text-align: center;border:1px solid #1d90e6;padding:5px 0;color:#555;font-size:14px;}
+  div.showCarInfo table tr td a{text-decoration: none;color:#555}
 </style>

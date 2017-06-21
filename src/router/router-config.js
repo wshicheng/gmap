@@ -14,7 +14,9 @@ import memberCenter from '../pages/inner/memberCenter/index.vue'
 import queryCharts from '../pages/inner/queryCharts/index.vue'
 import queryLists from '../pages/inner/queryLists/index.vue'
 import carUseDetail from '../pages/inner/carUseDetail/index.vue'
+import NotFoundPage from '../pages/404/index.vue'
 export default [
+  { path: '*', component: NotFoundPage },
   {
     path: '/',
     name: '登录',

@@ -4,5 +4,8 @@ import routeConfig from './router-config.js'
 Vue.use(Router)
 export default new Router({
   routes: routeConfig,
-  mode: 'history'
+  mode: 'history',
+  scrollBehavior (to, from, savedPosition) {
+    return { x: 0, y: 0 }
+  }
 })
