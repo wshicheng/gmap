@@ -22,7 +22,7 @@
       </el-col>
     </el-row>
     <el-row class="showTime">
-      <el-col class="dateArrow">
+      <el-col class="dateArrow" ref="dateArrow" v-bind:data-timetype="arrowTimeType">
         <el-button @click = "dateMinus">
           <i class="el-icon-arrow-left"></i>
         </el-button>
@@ -103,9 +103,10 @@
           ]
         },
         value4: '',
-        nowTime: '2017/06/20',
+        nowTime: '2017-06-20',
         show: false,
-        clickTimes: 0
+        clickTimes: 0,
+        arrowTimeType: 'day'
       }
     },
     components: {
@@ -128,31 +129,83 @@
           case '今日': {
             nowTime = moment().format('YYYY-MM-DD')
             this.nowTime = nowTime
+            this.arrowTimeType = 'day'
+            this.clickTimes = 0
             break
           }
           case '本周': {
             nowTime = moment().format('YYYY年第ww周')
             this.nowTime = nowTime
+            this.arrowTimeType = 'week'
+            this.clickTimes = 0
             break
           }
           case '本月': {
             nowTime = moment().format('YYYY年MM月')
             this.nowTime = nowTime
+            this.arrowTimeType = 'month'
+            this.clickTimes = 0
             break
           }
         }
       },
       dateMinus () {
-        var nums = --this.clickTimes
-        var lastDay = new Date().getTime() + 24 * 60 * 60 * 1000 * nums
-        console.log(moment(lastDay).format('YYYY/MM/DD'))
-        this.nowTime = moment(lastDay).format('YYYY/MM/DD')
+        var dateTimeType = this.$refs.dateArrow.$el.dataset.timetype
+        var nums = null
+        switch (dateTimeType) {
+          case 'day': {
+            nums = --this.clickTimes
+            console.log(nums)
+            var lastDay = new Date().getTime() + 24 * 60 * 60 * 1000 * nums
+            console.log(moment(lastDay).format('YYYY-MM-DD'))
+            this.nowTime = moment(lastDay).format('YYYY-MM-DD')
+            break
+          }
+          case 'week': {
+            nums = --this.clickTimes
+            console.log(nums)
+            var lastweek = new Date().getTime() + 24 * 60 * 60 * 1000 * 7 * nums
+            console.log(moment(lastweek).format('YYYY年第WW周'))
+            this.nowTime = moment(lastweek).format('YYYY年第WW周')
+            break
+          }
+          case 'month': {
+            nums = --this.clickTimes
+            var lastmonth = new Date().getTime() + 24 * 60 * 60 * 1000 * 7 * 4 * nums
+            console.log(moment(lastmonth).format('YYYY年MM月'))
+            this.nowTime = moment(lastmonth).format('YYYY年MM月')
+            break
+          }
+        }
       },
       dateAplus () {
-        var nums = ++this.clickTimes
-        var lastDay = new Date().getTime() + 24 * 60 * 60 * 1000 * nums
-        console.log(moment(lastDay).format('YYYY/MM/DD'))
-        this.nowTime = moment(lastDay).format('YYYY/MM/DD')
+        var dateTimeType = this.$refs.dateArrow.$el.dataset.timetype
+        var nums = null
+        switch (dateTimeType) {
+          case 'day': {
+            nums = ++this.clickTimes
+            console.log(nums)
+            var lastDay = new Date().getTime() + 24 * 60 * 60 * 1000 * nums
+            console.log(moment(lastDay).format('YYYY-MM-DD'))
+            this.nowTime = moment(lastDay).format('YYYY-MM-DD')
+            break
+          }
+          case 'week': {
+            nums = ++this.clickTimes
+            console.log(nums)
+            var lastweek = new Date().getTime() + 24 * 60 * 60 * 1000 * 7 * nums
+            console.log(moment(lastweek).format('YYYY年第WW周'))
+            this.nowTime = moment(lastweek).format('YYYY年第WW周')
+            break
+          }
+          case 'month': {
+            nums = ++this.clickTimes
+            var lastmonth = new Date().getTime() + 24 * 60 * 60 * 1000 * 7 * 4 * nums
+            console.log(moment(lastmonth).format('YYYY年MM月'))
+            this.nowTime = moment(lastmonth).format('YYYY年MM月')
+            break
+          }
+        }
       }
     }
   }
