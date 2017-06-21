@@ -35,18 +35,32 @@
       </el-form>
     </div>
     <div class="showCarInfo">
-      <el-table :data="tableData" height="250" borderstyle="width: 100%">
-        <el-table-column prop="carNum" label="车辆号"></el-table-column>
-        <el-table-column prop="finnalNum"  class-name="finnalNum" width="200" label="终端编号"></el-table-column>
-        <el-table-column prop="carName" label="车辆名称"></el-table-column>
-        <el-table-column prop="carType" label="车型"></el-table-column>
-        <el-table-column prop="carOnlineTime" label="上线日期"></el-table-column>
-        <el-table-column prop="carStatus" label="状态"></el-table-column>
-        <el-table-column prop="carRideTimes" label="骑行次数">
-        </el-table-column>
-      </el-table>
+      <table>
+        <thead>
+          <tr>
+            <th>车辆号</th>
+            <th>终端编号</th>
+            <th>车辆名称</th>
+            <th>车型</th>
+            <th>上线日期</th>
+            <th>状态</th>
+            <th>骑行次数</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item of tableData">
+            <td><router-link v-bind:to="{path:'/index/carUseDetail', query: {carNum:item.carNum}}">{{item.carNum}}</router-link></td>
+            <td>{{item.finnalNum}}</td>
+            <td>{{item.carName}}</td>
+            <td>{{item.carType}}</td>
+            <td>{{item.carOnlineTime}}</td>
+            <td>{{item.carStatus}}</td>
+            <td>{{item.carRideTimes}}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-  </div>  
+  </div> 
 </template>
 <script>
   export default {
@@ -90,14 +104,14 @@
     }
   }
 </script>
-<style>
+<style scoped>
   div.carManager{width:100%;height:100%}
   div.carManager div.queryCarInfo{background: #f1fff1;
     margin-bottom: 10px;
     padding: 10px;}
-  div.carManager div.showCarInfo{height:70px;background:blue;}
   div.line{margin-left:0px;}
   div.el-input{width:initial}
-  div.carManager div.el-table__header-wrapper tr th{background:black;}
-  div.carManager div.el-table__header-wrapper tr th>.cell{background:black;color:yellow}
+  div.showCarInfo table{border-collapse:collapse;width:100%}
+  div.showCarInfo table tr th{text-align:center;border:1px solid #1d90e6;padding: 5px 0;background:#1d90e6;color:#fff;}
+  div.showCarInfo table tr td{text-align: center;border:1px solid #1d90e6;padding:5px 0;color:#555;font-size:14px;}
 </style>

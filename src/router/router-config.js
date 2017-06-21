@@ -13,6 +13,7 @@ import accountManager from '../pages/inner/accountManager/index.vue'
 import memberCenter from '../pages/inner/memberCenter/index.vue'
 import queryCharts from '../pages/inner/queryCharts/index.vue'
 import queryLists from '../pages/inner/queryLists/index.vue'
+import carUseDetail from '../pages/inner/carUseDetail/index.vue'
 export default [
   {
     path: '/',
@@ -32,6 +33,11 @@ export default [
         path: '/index/carManager',
         name: '车辆管理',
         component: carManager
+      },
+      {
+        path: '/index/carUseDetail',
+        name: '车辆明细',
+        component: carUseDetail
       },
       {
         path: '/index/consumeData',
