@@ -1,7 +1,7 @@
 <template>
   <div class="pageNotFound">
     <h1>
-      对不起您找的页面消失了~~~~~
+      
     </h1>
     <h2><em><span class="STYLE1">404 Error&nbsp;&nbsp; </span></em>:所查找的页面不存在,可能已被删除或您输错了网址!</h2>
     <p class="link">
@@ -9,6 +9,8 @@
     </p>
   </div>  
 </template>
+<script>
+</script>
 <style scoped>
 body{margin:0;padding:0;font:14px/1.6 Arial,Sans-serif;}
 a:link,a:visited{color:#007ab7;text-decoration:none;}
@@ -16,11 +18,12 @@ h1{
 	position:relative;
 	z-index:2;
 	width:540px;
-	height:100px;
+	height:200px;
 	margin:110px auto 15px;
 	overflow:hidden;
 	border:1px solid #fff;
 	background-repeat: no-repeat;
+	background-image:url('../../../src/assets/img/Main.jpg')
 }
 h2{
 	position:absolute;
