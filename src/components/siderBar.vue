@@ -86,10 +86,4 @@ div.siderBar {
 }
 </style>
 <script>
-  import $ from 'jquery'
-  export default {
-    mounted: function () {
-      console.log($)
-    }
-  }
 </script>
