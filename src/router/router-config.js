@@ -59,7 +59,7 @@ export default [
       },
       {
         path: '/index/consumeData',
-        name: '报表管理',
+        name: '',
         component: consumeData,
         children: [
           {

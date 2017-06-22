@@ -96,35 +96,157 @@
     </div>
   </div>  
 </template>
-<style>
-  div.module{margin-bottom:20px;}
-  div.el-col-12{padding:10px;width:49%}
-  div.el-col-12:nth-child(1){float:right;}
-  div.el-col-12 .income_title{height:30px;line-height: 30px;margin-bottom:5px;}
-  div.el-col-12 .income_title .income_time{font-size: 16px}
-  div.el-col-12 .income_title .income_detail{font-size:14px;float:right;}
-  div.el-col-12 .income_count{margin-bottom:5px;font-size:30px;}
-  div.el-col-12 .income_diff{text-align: right;}
-  div.el-col-12 .income_diff span{margin-right:20px;}
-  div.mounthIncoming{background:#ff4949;color:#fff;}
-  div.dayIncoming{background:rgb(167, 234, 94);color:#fff;}
-  span.income_time{font-weight:bold}
-  span.income_detail{cursor:pointer}
-  div.status{background:#ffc0cb;padding:0;}
-  div.status_title,div.datas_title{background:#4ca28f;line-height: 40px;font-weight:normal;color:#fff}
-  div.status_title span,div.datas_title span{margin-left:10px;}
-  div.datas_title span.data_display small{margin-left:5px;color:#a7ea5e;}
-  div.status_title span.arrow,div.datas_title span.arrow{margin:0 10px 0 0;float:right;cursor:pointer}
-  div.status div.list ul li {list-style-type:none;background:#a7ea5e;color:#fff;line-height: 30px;height:30px;padding:5px 0;border-bottom:1px dashed #fff;}
-  div.status div.list ul li:nth-last-child(1){border-bottom:none}
-  div.status div.list ul li div.el-col-12{padding:0 10px 0 0;text-align:right;}
-  div.status div.list ul li div.el-col-6:nth-child(1){padding-left:10px;}
-  div.datas{padding:0}
-  div.Histogram{width:100%;background:#fff;}
-  div.settlementInfo{background:#ff4949;line-height: 40px;height:40px;padding:5px 10px;color:#fff;}
-  div.settlementInfo button.withdrawal{float:right;margin-right:20px;}
-  div.mapWrap{width:100%;height:500px;}
-  div.mapTitle{line-height: 40px;height: 40px;background: #1d90e6;padding: 5px 10px;margin-bottom: 5px;color: #fff;}
+<style scoped>
+  div.module {
+  /*margin-bottom:20px;*/
+  padding: 20px;
+  background: #fff;
+}
+
+div.el-col-12 {
+  padding: 10px;
+  width: 49%
+}
+
+div.el-col-12:nth-child(1) {
+  float: right;
+}
+
+div.el-col-12 .income_title {
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 5px;
+}
+
+div.el-col-12 .income_title .income_time {
+  font-size: 16px;
+}
+
+div.el-col-12 .income_title .income_detail {
+  font-size: 14px;
+  float: right;
+}
+
+div.el-col-12 .income_count {
+  margin-bottom: 5px;
+  font-size: 30px;
+}
+
+div.el-col-12 .income_diff {
+  text-align: right;
+}
+
+div.el-col-12 .income_diff span {
+  margin-right: 20px;
+}
+
+div.mounthIncoming {
+  background: #ff4949;
+  color: #fff;
+}
+
+div.dayIncoming {
+  background: rgb(167, 234, 94);
+  color: #fff;
+}
+
+span.income_time {
+  font-weight: bold;
+}
+
+span.income_detail {
+  cursor: pointer;
+}
+
+div.status {
+  background: #ffc0cb;
+  padding: 0;
+}
+
+div.status_title,
+div.datas_title {
+  background: #4ca28f;
+  line-height: 40px;
+  font-weight: normal;
+  color: #fff
+}
+
+div.status_title span,
+div.datas_title span {
+  margin-left: 10px;
+}
+
+div.datas_title span.data_display small {
+  margin-left: 5px;
+  color: #a7ea5e;
+}
+
+div.status_title span.arrow,
+div.datas_title span.arrow {
+  margin: 0 10px 0 0;
+  float: right;
+  cursor: pointer
+}
+
+div.status div.list ul li {
+  list-style-type: none;
+  background: #a7ea5e;
+  color: #fff;
+  line-height: 30px;
+  height: 30px;
+  padding: 5px 0;
+  border-bottom: 1px dashed #fff;
+}
+
+div.status div.list ul li:nth-last-child(1) {
+  border-bottom: none
+}
+
+div.status div.list ul li div.el-col-12 {
+  padding: 0 10px 0 0;
+  text-align: right;
+}
+
+div.status div.list ul li div.el-col-6:nth-child(1) {
+  padding-left: 10px;
+}
+
+div.datas {
+  padding: 0
+}
+
+div.Histogram {
+  height: 244px;
+  width: 100%;
+  background: #ff4949;
+}
+
+div.settlementInfo {
+  background: #ff4949;
+  line-height: 40px;
+  height: 40px;
+  padding: 5px 10px;
+  color: #fff;
+}
+
+div.settlementInfo button.withdrawal {
+  float: right;
+  margin-right: 20px;
+}
+
+div.mapWrap {
+  width: 100%;
+  height: 500px;
+}
+
+div.mapTitle {
+  line-height: 40px;
+  height: 40px;
+  background: #1d90e6;
+  padding: 5px 10px;
+  margin-bottom: 5px;
+  color: #fff;
+}
 </style>
 <script>
   import myCanvas from '../../../components/highChartRectIndex.vue'

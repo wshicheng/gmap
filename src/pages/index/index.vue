@@ -39,18 +39,91 @@
 </script>
 
 <style scoped>
-  #application{position: fixed;top: 0;bottom: 0;right: 0;left: 0;background: #fafafa;}
-  .platform-windows{    position: fixed;top: 0;right: 0;left: 0;bottom: 0;width:100%;height:100%}
-  .desktop-window .window-container{width: 100%;height: 100%;}
-  div.Grid{width:100%;height:100%;position:relative;}
-  div.Grid .GridEntry{position:absolute;}
-  div.Grid .GridEntry.leftEntry{background:#eef1f6;top: 0%;left: 0%;height: 100%;width: 15%;}
-  div.Grid .GridEntry.rightEntry{background:#ccdc76;top: 0%;left: 15%;height: 100%;width: 85%;}
-  .Grid .GridEntry .entryInner{position: absolute;top: 0;right: 0;left: 0;bottom: 0;overflow: hidden;background:#fff;}
-  .Grid .GridEntry .entryInner .workspace{width:100%;height:90%;box-sizing: border-box}
-  .Grid .GridEntry .entryInner .workspace .scrollArea{width: 100%;height: 100%;overflow: auto;box-sizing: border-box}
-  .Grid .GridEntry .entryInner .workspace .scrollArea .editcontainer{background: #fafafa;padding-top: 20px; padding-bottom: 20px;}
-  .Grid .GridEntry .entryInner .workspace .scrollArea .editcontainer .documentedit{user-select: text;max-width: 900px;min-height: 1056px;margin-left: auto!important;margin-right: auto!important;background: #fff;border: 1px solid #e8eaed;border-radius: 2px;padding: 30px;cursor: text;position: relative;}
+  #application{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: #f3f3f5;
+  }
+  .platform-windows{    
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width:100%;
+    height:100%
+  }
+  .desktop-window .window-container{
+    width: 100%;
+    height: 100%;
+  }
+  div.Grid{
+    width:100%;
+    height:100%;
+    position:relative;
+  }
+  div.Grid .GridEntry{
+    position:absolute;
+  }
+  div.Grid .GridEntry.leftEntry{
+    background:#f3f3f5;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 19%;
+  }
+  div.Grid .GridEntry.rightEntry{
+    background:#f3f3f5;
+    top: 0%;
+    left: 19%;
+    height: 100%;
+    width: 80%;
+  }
+  .Grid .GridEntry .entryInner{
+    position: absolute;
+    top: 10px;
+    /*top: 20px;*/
+    right: 0;
+    /*left: 0;*/
+    left: 20px;
+    bottom: 0;
+    overflow: hidden;
+    /*background:#fff;*/
+    background: #f3f3f5;
+  }
+  .Grid .GridEntry .entryInner .workspace{
+    width:100%;
+    height:90%;
+    box-sizing: border-box
+  }
+  .Grid .GridEntry .entryInner .workspace .scrollArea{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    box-sizing: border-box
+  }
+/*  .Grid .GridEntry .entryInner .workspace .scrollArea .editcontainer{
+    background: #fff;
+    padding-top: 20px; 
+    padding-bottom: 20px;
+  }*/
+  .Grid .GridEntry .entryInner .workspace .scrollArea .editcontainer .documentedit {
+    user-select: text;
+    /*max-width: 900px;*/
+    /*min-height: 1056px;*/
+    /*max-width: 1200px;*/
+    min-height: 845px;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    /*background: #fff;border: 1px solid #e8eaed;*/
+    border-radius: 2px;
+    /*padding: 30px;*/
+    margin-top: 20px;
+    cursor: text;position: relative;
+  }
 
 
 
