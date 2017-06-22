@@ -8,7 +8,7 @@
               <span class="income_detail">明细>></span>
             </div>
             <div class="income_count daycount">
-              $18800000.00
+              $18800.00
             </div>
             <div class="income_diff">
               <span>较上月：+12300.00</span>
